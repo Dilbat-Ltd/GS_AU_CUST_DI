@@ -1,0 +1,57 @@
+{
+  "id": "52b6b205-e93a-4d5e-afb9-65cd58bfdce9",
+  "name": "GS_AU_CUST_DI",
+  "publisher": "Danube Island",
+  "version": "28.0.261006.1001",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "1a367ed5-abce-4d58-b003-97ee29ea86b6",
+      "name": "GS EXT.CORE.005 TALEND Interface",
+      "publisher": "IT.integro",
+      "version": "23.0.4.0"
+    },
+    {
+      "id": "9285e1ac-9e9a-4f99-a469-09c97ed544d2",
+      "name": "GS_EXT.CORE.001 COA IFRS NIS",
+      "publisher": "IT.integro",
+      "version": "26.0.3.0"
+    },
+    {
+      "id": "e14ff3f5-cf14-4544-ac89-006c29bf858c",
+      "publisher": "Tetra Business Solutions Kft.",
+      "name": ">Commission",
+      "version": "2.26.20250811.1"
+    },
+    {
+      "id": "dfd18afd-9f4a-4e1a-849f-010e5e975079",
+      "publisher": "Tetra Business Solutions Kft.",
+      "name": ">Partner Settlement Management",
+      "version": "1.2.20250926.1"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 50400,
+      "to": 50449
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "17.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

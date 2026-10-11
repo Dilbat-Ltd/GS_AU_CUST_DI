@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"name": "app",
+			"path": "app"
+		  }
+		],
+		"settings": {
+		  "al.codeAnalyzers": [
+			"${PerTenantExtensionCop}",
+			"${CodeCop}",
+			"${UICop}"
+		  ],
+		  "CRS.AlSubFolderName": "src",
+		  "CRS.ExtensionObjectNamePattern": "",
+		  "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		  "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		  "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		  "CRS.ObjectNamePrefix": "GSCH",
+		  "CRS.ObjectNameSuffix": "",
+		  "CRS.RemovePrefixFromFilename": true,
+		  "al.enableCodeActions": true,
+		  "al.enableCodeAnalysis": true,
+		  "CRS.RenameWithGit": false,
+		  "al.editorServicesLogLevel": "Verbose",
+		  "al.ruleSetPath": "./cc.ruleset.json"
+		},
+		"launch": {
+			"version": "0.2.0",
+			"configurations": [
+				{
+					"name": "Microsoft cloud sandbox",
+					"request": "launch",
+					"type": "al",
+					"environmentType": "Sandbox",
+					"environmentName": "sandbox",
+					"startupObjectId": 22,
+					"startupObjectType": "Page",
+					"breakOnError": true,
+					"launchBrowser": true,
+					"enableLongRunningSqlStatements": true,
+					"enableSqlInformationDebugger": true
+				}
+			]
+		}
+}

@@ -1,0 +1,50 @@
+{
+    "name": "CC Custom CodeCop",
+    "rules": [
+        {
+            "id": "AA0218",
+            "action": "None",
+            "justification": "Rule: Must specify ToolTip..."
+        },
+		{
+            "id": "AA0214",
+            "action": "None",
+            "justification": "Rule: ...should be modified before saving to the database"
+        },
+        {
+            "id": "AL0432",
+            "action":  "None",
+            "justification": "Rule: ...Table 'Invoice Post. Buffer' is marked for removal. Reason: This table will be marked as temporary. Please ensure you do not store any data in the table.. Tag: 18.0."
+        },
+        {
+            "id": "AA0139",
+            "action":  "None",
+            "justification": "Rule: ...Possible overflow assigning 'Text[]' to 'Text[]'."
+        },
+        {
+            "id": "AL0617",
+            "action":  "None",
+            "justification": "Rule: ...Event trigger 'OnBeforeActionEvent' cannot be used because the action 'VHIRetentionStatistics' specifies the 'RunObject' property. This warning will become an error in a future release."
+        },
+        {
+            "id": "AA0072",
+            "action":  "None",
+            "justification": "Rule: ...The name of XXX is not valid. The name of variables and parameters must be suffixed with the type or object name."
+        },
+        {
+            "id": "AA0232",
+            "action":"None",
+            "justification": "Rule: ...The FlowField Amount of ... should be added to the SIFT key."
+        },
+        {
+            "id": "AA0210",
+            "action":"None",
+            "justification": "Rule: ...The table Dimension Value does not contain a key with the field Blocked."
+        },
+        {
+            "id": "AL0603",
+            "action":"None",
+            "justification": "Rule: An implicit conversion is being performed from a value of type Integer to a value of type Enum Gen. Journal Document Type"
+        }
+    ]
+}
