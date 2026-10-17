@@ -186,6 +186,18 @@ table 50400 "GSAU BI Sales Document"
         {
             Caption = 'DSSystemCreatedAt';
         }
+        field(210; "Partner Sales Settlement"; Boolean)
+        {
+            Caption = 'Partner Sales Settlement';
+        }
+        field(220; "External Document No."; Code[35])
+        {
+            Caption = 'External Document No.';
+        }
+        field(230; Comment; Text[1024])
+        {
+            Caption = 'Comment';
+        }
 
     }
     keys

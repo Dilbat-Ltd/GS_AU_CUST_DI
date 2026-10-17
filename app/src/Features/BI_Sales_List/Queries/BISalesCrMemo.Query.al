@@ -37,6 +37,8 @@ query 50401 "GSAU BI Sales Cr. Memo"
             { }
             column(Ship_to_Contact; "Ship-to Contact")
             { }
+            column(External_Document_No_; "External Document No.")
+            { }
             dataitem(Sales_Cr_Memo_Line; "Sales Cr.Memo Line")
             {
                 DataItemLink = "Document No." = Sales_Cr_Memo_Header."No.";
@@ -82,6 +84,8 @@ query 50401 "GSAU BI Sales Cr. Memo"
                 { }
                 column(Dimension_Set_ID; "Dimension Set ID")
                 { }
+                column(Partner_Settlement_Invoice; "TTR PS SF Invoice")
+                { }
 
                 dataitem(Customer; Customer)
                 {
@@ -90,6 +94,15 @@ query 50401 "GSAU BI Sales Cr. Memo"
 
                     column(SourceSystemID; SourceSystemID)
                     { }
+
+                    dataitem(TTR_PS_SF_Sales_Transaction; "TTR PS SF Sales Transaction")
+                    {
+                        DataItemLink = "Pre Assigned Invoice No." = Sales_Cr_Memo_Line."Document No.";
+                        SqlJoinType = LeftOuterJoin;
+
+                        column(Comment; Comment)
+                        { }
+                    }
                 }
             }
         }

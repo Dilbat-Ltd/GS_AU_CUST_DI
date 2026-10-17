@@ -191,6 +191,18 @@ page 50400 "GSAU BI Sales Document List"
                     ToolTip = 'Specifies the value of the SystemCreatedAt field.';
                     Caption = 'System Created At';
                 }
+                field("Partner Sales Settlement"; Rec."Partner Sales Settlement")
+                {
+                    ToolTip = 'Specifies the value of the Partner Sales Settlement field.';
+                }
+                field("External Document No."; Rec."External Document No.")
+                {
+                    ToolTip = 'Specifies the value of the External Document No. field.';
+                }
+                field(Comment; Rec.Comment)
+                {
+                    ToolTip = 'Specifies the value of the Comment field.';
+                }
             }
         }
     }
@@ -274,6 +286,9 @@ page 50400 "GSAU BI Sales Document List"
         Rec.SourceSystemID := SalesInvoice.SourceSystemID;
         Rec."End-User Reference ID" := SalesInvoice.End_User_Reference_ID;
         Rec.SDSystemCreatedAt := SalesInvoice.SystemCreatedAt;
+        Rec."Partner Sales Settlement" := SalesInvoice.Partner_Settlement_Invoice;
+        Rec."External Document No." := SalesInvoice.External_Document_No_;
+        Rec.Comment := SalesInvoice.Comment;
         Rec.Insert();
     end;
 
@@ -316,6 +331,9 @@ page 50400 "GSAU BI Sales Document List"
         Rec.SourceSystemID := SalesCrMemo.SourceSystemID;
         Rec."End-User Reference ID" := SalesCrMemo.End_User_Reference_ID;
         Rec.SDSystemCreatedAt := SalesCrMemo.SystemCreatedAt;
+        Rec."Partner Sales Settlement" := SalesCrMemo.Partner_Settlement_Invoice;
+        Rec."External Document No." := SalesCrMemo.External_Document_No_;
+        Rec.Comment := SalesCrMemo.Comment;
         Rec.Insert();
     end;
 

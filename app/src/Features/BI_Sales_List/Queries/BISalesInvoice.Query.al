@@ -37,6 +37,10 @@ query 50400 "GSAU BI Sales Invoice"
             { }
             column(Ship_to_Contact; "Ship-to Contact")
             { }
+            column(External_Document_No_; "External Document No.")
+            { }
+            column(Partner_Settlement_Invoice; "TTR PS SF Invoice")
+            { }
             dataitem(Sales_Invoice_Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = Sales_Invoice_Header."No.";
@@ -90,6 +94,15 @@ query 50400 "GSAU BI Sales Invoice"
 
                     column(SourceSystemID; SourceSystemID)
                     { }
+
+                    dataitem(TTR_PS_SF_Sales_Transaction; "TTR PS SF Sales Transaction")
+                    {
+                        DataItemLink = "Pre Assigned Invoice No." = Sales_Invoice_Line."Document No.";
+                        SqlJoinType = LeftOuterJoin;
+
+                        column(Comment; Comment)
+                        { }
+                    }
                 }
             }
         }
