@@ -86,6 +86,8 @@ query 50400 "GSAU BI Sales Invoice"
                 { }
                 column(Dimension_Set_ID; "Dimension Set ID")
                 { }
+                column(Deferral_Code; "Deferral Code")
+                { }
 
                 dataitem(Customer; Customer)
                 {

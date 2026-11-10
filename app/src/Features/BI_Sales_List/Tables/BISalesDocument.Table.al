@@ -198,6 +198,10 @@ table 50400 "GSAU BI Sales Document"
         {
             Caption = 'Comment';
         }
+        field(240; "Deferral Code"; Code[10])
+        {
+            Caption = 'Deferral Code';
+        }
 
     }
     keys

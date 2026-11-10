@@ -86,6 +86,8 @@ query 50401 "GSAU BI Sales Cr. Memo"
                 { }
                 column(Partner_Settlement_Invoice; "TTR PS SF Invoice")
                 { }
+                column(Deferral_Code; "Deferral Code")
+                { }
 
                 dataitem(Customer; Customer)
                 {

@@ -6,7 +6,7 @@ using Microsoft.Sales.Document;
 report 50402 "GSAU Fix SalesHdr Stripe Email"
 {
     ApplicationArea = All;
-    Caption = 'GS AU and NZ Fix Sales Invoice Sell-to E-mail and Stripe Customer';
+    Caption = 'GS AU and NZ Fix Sales Invoice Stripe Customer';
     ProcessingOnly = true;
     UsageCategory = Administration;
     UseRequestPage = false;
@@ -15,7 +15,7 @@ report 50402 "GSAU Fix SalesHdr Stripe Email"
     {
         dataitem(SalesHeader; "Sales Header")
         {
-            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const(Invoice), "Sell-to E-Mail" = const(''));
+            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const(Invoice), "Sell-to E-Mail" = filter(<> ''), "TTR Stripe Customer" = const(''));
 
             trigger OnAfterGetRecord()
             begin
@@ -52,7 +52,9 @@ report 50402 "GSAU Fix SalesHdr Stripe Email"
         if not Customer.Get(SalesHeader."Sell-to Customer No.") then
             Error('Customer %1 does not exist.', SalesHeader."Sell-to Customer No.");
 
-        SalesHeader."Sell-to E-Mail" := Customer."E-Mail";
+        if Customer."TTR Stripe Customer" = '' then
+            Error('Customer %1 does not have a Stripe Customer filled in.', SalesHeader."Sell-to Customer No.");
+
         SalesHeader."TTR Stripe Customer" := Customer."TTR Stripe Customer";
         SalesHeader.Modify(true);
     end;

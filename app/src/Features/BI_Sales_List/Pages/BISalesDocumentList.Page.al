@@ -203,6 +203,10 @@ page 50400 "GSAU BI Sales Document List"
                 {
                     ToolTip = 'Specifies the value of the Comment field.';
                 }
+                field("Deferral Code"; Rec."Deferral Code")
+                {
+                    ToolTip = 'Specifies the value of the Deferral Code field.';
+                }
             }
         }
     }
@@ -289,6 +293,7 @@ page 50400 "GSAU BI Sales Document List"
         Rec."Partner Sales Settlement" := SalesInvoice.Partner_Settlement_Invoice;
         Rec."External Document No." := SalesInvoice.External_Document_No_;
         Rec.Comment := SalesInvoice.Comment;
+        Rec."Deferral Code" := SalesInvoice.Deferral_Code;
         Rec.Insert();
     end;
 
@@ -334,6 +339,7 @@ page 50400 "GSAU BI Sales Document List"
         Rec."Partner Sales Settlement" := SalesCrMemo.Partner_Settlement_Invoice;
         Rec."External Document No." := SalesCrMemo.External_Document_No_;
         Rec.Comment := SalesCrMemo.Comment;
+        Rec."Deferral Code" := SalesCrMemo.Deferral_Code;
         Rec.Insert();
     end;
 
@@ -375,12 +381,12 @@ page 50400 "GSAU BI Sales Document List"
             Rec."Item Variant Description 2" := ItemVariant."Description 2";
     end;
 
-    local procedure GetGLAccountInformation(GenBusPostingGroup: Code[20]; GenProdPostingGroup: Code[20]; Type: enum "Sales Line Type"; No: CODE[20])
+    local procedure GetGLAccountInformation(GenBusPostingGroup: Code[20]; GenProdPostingGroup: Code[20]; pType: enum "Sales Line Type"; No: CODE[20])
     var
         GeneralPostingSetup: Record "General Posting Setup";
         GLAccount: Record "G/L Account";
     begin
-        If Type = Type::Item then begin
+        If pType = pType::Item then begin
             GeneralPostingSetup.Reset();
             GeneralPostingSetup.SetRange("Gen. Bus. Posting Group", GenBusPostingGroup);
             GeneralPostingSetup.SetRange("Gen. Prod. Posting Group", GenProdPostingGroup);

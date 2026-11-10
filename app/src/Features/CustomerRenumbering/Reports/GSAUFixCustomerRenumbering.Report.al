@@ -1,7 +1,7 @@
 namespace DanubeIsland.GSAUCUSTDI.CustomerRenumbering;
 
-using Microsoft.Sales.Customer;
 using Microsoft.Finance.Dimension;
+using Microsoft.Sales.Customer;
 using System.IO;
 using System.Utilities;
 
